@@ -28,7 +28,7 @@ export default class Register extends Component {
       loading: true,
     });
     axios
-      .post("/register", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/register", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
         this.setState({

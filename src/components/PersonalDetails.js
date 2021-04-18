@@ -34,7 +34,7 @@ export default class PersonalDetails extends Component {
     formdata.append("filetype", "IMG");
     axios({
       method: "post",
-      url: `/upload`,
+      url: `https://cvmaker0799.herokuapp.com/api/upload`,
       headers: {
         "Content-Type": "multipart/form-data",
       },

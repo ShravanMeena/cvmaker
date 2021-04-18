@@ -71,7 +71,7 @@ export default class Employment extends Component {
     };
 
     axios
-      .post("/employment", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/employment", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
         this.setState({

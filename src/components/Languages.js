@@ -33,7 +33,7 @@ export default class Languages extends Component {
     };
 
     axios
-      .post("/language", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/language", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
 

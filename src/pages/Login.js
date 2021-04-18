@@ -27,7 +27,7 @@ export default class Login extends Component {
       loading: true,
     });
     axios
-      .post("/login", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/login", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
 

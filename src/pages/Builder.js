@@ -108,7 +108,7 @@ class Builder extends Component {
       postedBy: userData.data._id,
     };
     axios
-      .post("/resume", data)
+      .post("https://cvmaker0799.herokuapp.com/api/resume", data)
       .then((dataFromDb) => {
         alert("Resume save");
       })
@@ -131,7 +131,10 @@ class Builder extends Component {
         email: userData.data.email,
       };
       axios
-        .post("/resume/get-all-data", _object)
+        .post(
+          "https://cvmaker0799.herokuapp.com/api/resume/get-all-data",
+          _object
+        )
         .then((data) => {
           this.setState({
             data,

@@ -72,7 +72,7 @@ export default class Internship extends Component {
     };
 
     axios
-      .post("/internship", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/internship", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
         this.setState({

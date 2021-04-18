@@ -72,7 +72,7 @@ export default class Education extends Component {
     };
 
     axios
-      .post("/education", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/education", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
         this.setState({

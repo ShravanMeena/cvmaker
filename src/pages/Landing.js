@@ -27,7 +27,10 @@ export default class Landing extends Component {
         email: userData.data.email,
       };
       axios
-        .post("/resume/get-all-data", _object)
+        .post(
+          "https://cvmaker0799.herokuapp.com/api/resume/get-all-data",
+          _object
+        )
         .then((data) => {
           this.setState({
             data,
@@ -50,7 +53,7 @@ export default class Landing extends Component {
   deleteResumeHandler = (id) => {
     if (window.confirm("Press a button!")) {
       axios
-        .delete(`/resume/${id}`)
+        .delete(`https://cvmaker0799.herokuapp.com/api/resume/${id}`)
         .then((data) => {
           this.getAllData();
         })

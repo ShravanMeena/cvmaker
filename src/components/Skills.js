@@ -32,7 +32,7 @@ export default class Skills extends Component {
     };
 
     axios
-      .post("/skill", _object)
+      .post("https://cvmaker0799.herokuapp.com/api/skill", _object)
       .then((data) => {
         console.log(JSON.stringify(data));
 
