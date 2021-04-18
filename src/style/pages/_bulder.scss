@@ -1,0 +1,131 @@
+@import "../variables.scss";
+.builder {
+  background-color: $color3;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  .left {
+    width: 50%;
+    height: 100%;
+    background-color: $color3;
+    padding: 30px;
+    overflow-x: scroll;
+    .header {
+      Input {
+        height: 50px;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        padding: 10px;
+      }
+    }
+
+    .personalDetails,
+    .professionalSummary,
+    .employmentHistory,
+    .skillsContainer,
+    .hobbiesContainer,
+    .langsContainer,
+    .educationSummary,
+    .internshipHistory {
+      width: 100%;
+      margin-top: 20px;
+      p {
+        font-size: 14px;
+        color: gray;
+        font-weight: 400;
+      }
+      h4 {
+        font-size: 220px;
+        font-weight: 700;
+        color: #38383d;
+        text-transform: capitalize;
+      }
+      .inputFieldContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        // align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .singleField {
+          width: 48%;
+          margin-bottom: 20px;
+          .datePicker {
+            border-radius: 5px;
+            background-color: #f2f5fa;
+            border: 1px solid #f2f5fa;
+            width: 100%;
+          }
+          h6 {
+            color: #8f979c;
+            font-size: 13px;
+          }
+          Input {
+            // height: 40px;
+            padding: 10px 16px;
+            border-radius: 5px;
+            background-color: #f2f5fa;
+            border: 1px solid #f2f5fa;
+          }
+          TextArea {
+            border-radius: 5px;
+            background-color: #f2f5fa;
+            border: 1px solid #f2f5fa;
+          }
+        }
+      }
+    }
+
+    .professionalSummary,
+    .hobbiesContainer {
+      TextArea {
+        border-radius: 5px;
+        background-color: #f2f5fa;
+        height: 200px;
+        border: 1px solid #f2f5fa;
+      }
+    }
+  }
+  .right {
+    width: 50%;
+    height: 100%;
+    overflow-x: scroll;
+    padding: 40px;
+    background: #eee;
+    .innerLeft {
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        font-size: 42px;
+        font-weight: 500;
+        text-align: center;
+      }
+      h4 {
+        font-weight: 400;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .builder {
+    .left {
+      width: 100%;
+    }
+    .right {
+      display: none;
+    }
+  }
+}
