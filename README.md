@@ -1,4 +1,3 @@
-# Currentely working on it .... frontend ready but backend not
 
 
 # Quick liks
