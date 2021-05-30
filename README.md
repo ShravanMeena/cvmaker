@@ -1,7 +1,7 @@
 
 
 # Quick liks
-1. [Screenshots](#screenshots)
+[Watch short video](https://youtu.be/2_xt1WpoBgU)
 
 
 # Screenshots
