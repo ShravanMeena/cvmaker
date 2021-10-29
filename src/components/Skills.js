@@ -39,9 +39,8 @@ export default class Skills extends Component {
         getAllData();
         this.setState({
           state_change: state_change + 1,
-
           name: "",
-          level: 1,
+          level: this.state.level,
         });
       })
       .catch((err) => {
@@ -52,6 +51,12 @@ export default class Skills extends Component {
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
+    });
+  };
+
+  onChangeHandler = (e) => {
+    this.setState({
+      level: parseInt(e),
     });
   };
 
@@ -79,39 +84,40 @@ export default class Skills extends Component {
     return (
       <>
         {/* <h4>Skills</h4> */}
-        <div className='inputFieldContainer'>
+        <div className="inputFieldContainer">
           {/* start */}
-          <div className='singleField'>
+          <div className="singleField">
             <h6>Skill</h6>
             <Input
               onChange={(event) => this.handleChange(event)}
-              name='name'
+              name="name"
               value={name}
-              placeholder=''
+              placeholder=""
             />
           </div>
           {/* end */}
 
           {/* start */}
-          <div className='singleField'>
+          <div className="singleField">
             <h6>Level</h6>
             <Select
-              className='datePicker'
-              size='large'
-              placeholder='Select a level'
-              onChange={this.onChangeHandler}>
-              <Option value='0'>0</Option>
-              <Option value='1'>1</Option>
-              <Option value='2'>2</Option>
-              <Option value='3'>3</Option>
-              <Option value='4'>4</Option>
+              className="datePicker"
+              size="large"
+              placeholder="Select a level"
+              onChange={this.onChangeHandler}
+            >
+              <Option value="0">0</Option>
+              <Option value="1">1</Option>
+              <Option value="2">2</Option>
+              <Option value="3">3</Option>
+              <Option value="4">4</Option>
             </Select>
           </div>
           {/* end */}
         </div>
         <ButtonAndDataShow
           addFunction={() => this.addSkills()}
-          title='skill'
+          title="skill"
           state_change={state_change}
           _saveDataToLocalStorage={this._saveDataToLocalStorage}
         />
@@ -128,9 +134,8 @@ export default class Skills extends Component {
                 }}
                 key={i}
                 checked={selectedTags.indexOf(sk._id) > -1}
-                onChange={(checked) =>
-                  this.handleChangeForTag(sk._id, checked)
-                }>
+                onChange={(checked) => this.handleChangeForTag(sk._id, checked)}
+              >
                 <h5>{sk.name}</h5>
               </CheckableTag>
             );
