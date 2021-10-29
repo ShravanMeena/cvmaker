@@ -8,6 +8,9 @@ import {
   MailOutlined,
 } from "@ant-design/icons";
 export default class Original extends Component {
+  _exportPdf = () => {
+    alert("working on it");
+  };
   render() {
     const { data } = this.props;
     return (
@@ -17,30 +20,31 @@ export default class Original extends Component {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-          }}>
-          <div className='header'>
+          }}
+        >
+          <div className="header">
             <Avatar
               size={80}
               src={
                 <Image src={IMAGEFROMBACKEND} style={{ objectFit: "cover" }} />
               }
             />
-            <div className='name'>
+            <div className="name">
               <h4>
                 {data.first_name} <span>{data.last_name}</span>
               </h4>
               <p>{data.job_title}</p>
             </div>
           </div>
-          <Button>Download</Button>
+          <Button onClick={() => this._exportPdf()}>Download</Button>
         </div>
 
         {/* main section */}
         <Divider />
-        <div className='main'>
-          <div className='resumeLeft'>
+        <div className="main">
+          <div className="resumeLeft">
             {/* contact */}
-            <div className='details'>
+            <div className="details">
               <h4>
                 <PhoneOutlined style={{ color: "#0d1117", fontSize: 16 }} />{" "}
                 <span> {data.phone}</span>
@@ -59,16 +63,16 @@ export default class Original extends Component {
               </h4>
 
               <br />
-              <div className='miniDetail'>
+              <div className="miniDetail">
                 <h1>Birth Date</h1>
                 <p>{data.dob}</p>
               </div>
-              <div className='miniDetail'>
+              <div className="miniDetail">
                 <h1>Nationality</h1>
                 <p>{data.nationality}</p>
               </div>
 
-              <div className='miniDetail'>
+              <div className="miniDetail">
                 <h1>Identity</h1>
                 <p>{data.identity}</p>
               </div>
@@ -76,24 +80,24 @@ export default class Original extends Component {
 
             {/* skillls */}
             {data.skills && (
-              <div className='skills'>
+              <div className="skills">
                 <h1>Skills</h1>
 
                 {data.skills.map((item) => {
                   return (
-                    <div className='single' style={{ marginTop: 5 }}>
+                    <div className="single" style={{ marginTop: 5 }}>
                       <h4>{item.name}</h4>
                       {item.level === 1 && (
-                        <Progress percent={25} status='active' />
+                        <Progress percent={25} status="active" />
                       )}
                       {item.level === 2 && (
-                        <Progress percent={50} status='active' />
+                        <Progress percent={50} status="active" />
                       )}
                       {item.level === 3 && (
-                        <Progress percent={75} status='active' />
+                        <Progress percent={75} status="active" />
                       )}
                       {item.level === 4 && (
-                        <Progress percent={100} status='active' />
+                        <Progress percent={100} status="active" />
                       )}
                     </div>
                   );
@@ -102,12 +106,12 @@ export default class Original extends Component {
             )}
 
             {data.languages && (
-              <div className='skills'>
+              <div className="skills">
                 <h1>Languages</h1>
 
                 {data.languages.map((item) => {
                   return (
-                    <div className='single'>
+                    <div className="single">
                       <h4>{item.name}</h4>
                     </div>
                   );
@@ -116,15 +120,15 @@ export default class Original extends Component {
             )}
           </div>
 
-          <div className='resumeRight'>
+          <div className="resumeRight">
             {/* profile */}
-            <div className='profile'>
+            <div className="profile">
               <h4>Profile</h4>
               <p>{data.professional_summary}</p>
             </div>
 
             {/* eductaion */}
-            <div className='education'>
+            <div className="education">
               <h4>Education</h4>
               {data.education.map((item, i) => {
                 return (
@@ -138,7 +142,7 @@ export default class Original extends Component {
               })}
             </div>
             {/* employment history */}
-            <div className='employment'>
+            <div className="employment">
               <h4>Employment History</h4>
 
               {data.employment.map((item, i) => {
@@ -156,7 +160,7 @@ export default class Original extends Component {
             </div>
             {/* internships */}
 
-            <div className='internship'>
+            <div className="internship">
               <h4>Internship</h4>
               {data.internship.map((item, i) => {
                 return (
@@ -174,7 +178,7 @@ export default class Original extends Component {
               })}
             </div>
             {/* hobbies */}
-            <div className='hobbies'>
+            <div className="hobbies">
               <h4>Hobbies</h4>
               <p>{data.hobbies}</p>
             </div>

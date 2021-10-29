@@ -14,9 +14,14 @@ class Resume extends Component {
   };
   readResumeHandler = () => {
     const id = this.props.match.params.id;
+
     axios
-      .get(`/resume/${id}`)
+      .get(`https://cvmaker0799.herokuapp.com/api/resume/${id}`)
       .then((data) => {
+        // this.getAllData();
+
+        console.log(JSON.stringify(data.data));
+
         this.setState({
           data: data.data,
         });
@@ -29,13 +34,14 @@ class Resume extends Component {
   componentDidMount() {
     this.readResumeHandler();
   }
+
   render() {
     if (!this.state.data) {
       return <Loader />;
     }
     return (
       <>
-        <div className='resumeContainer'>
+        <div className="resumeContainer">
           <div
             style={{
               marginTop: 20,
@@ -44,9 +50,10 @@ class Resume extends Component {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
-            }}>
+            }}
+          >
             <p>
-              <Link to='/'>
+              <Link to="/">
                 <BackwardFilled /> Back to home
               </Link>
             </p>
@@ -55,11 +62,12 @@ class Resume extends Component {
               style={{
                 fontSize: 20,
                 fontWeight: 500,
-              }}>
+              }}
+            >
               {this.state.data.resume_title}
             </p>
           </div>
-          <div className='innerResumeContainer'>
+          <div className="innerResumeContainer">
             <Original data={this.state.data} />
           </div>
         </div>
